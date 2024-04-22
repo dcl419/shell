@@ -81,4 +81,11 @@ shell study demo
 - else
 - 执行指令
 - fi
-- 
+
+# 循环
+- 可以反复执行某任务
+- for 循环，可以定义循环次数
+- for  变量名  in 值1 值2 值3 ...
+- do
+- 任务
+- done 
