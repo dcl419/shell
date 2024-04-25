@@ -89,3 +89,38 @@ shell study demo
 - do
 - 任务
 - done 
+
+- for ((i=0;i<10;i++))
+- do
+- 任务
+- done
+
+- while 循环
+- while 条件测试
+- do
+- 指令
+- done
+  
+# 控制循环
+- exit 可以终止循环 脚本也会终止
+- break 可以终止循环 不终止整个脚本 会终止循环后的任务
+- continue 可以终止当前循环，终止之后会继续下一次循环
+  
+
+# case 分支
+- 功能类似if，编写时语句比if精简
+
+- case 调用的变量名 in
+- 模式1)
+- 指令a
+- 指令b;;
+- 模式2)
+- 指令;;
+- *)
+- 指令
+- esac
+
+# nginx 安装
+- wget http://nginx.org/download/nginx-1.17.6.tar.gz
+- root /opt
+  
