@@ -123,4 +123,30 @@ shell study demo
 # nginx 安装
 - wget http://nginx.org/download/nginx-1.17.6.tar.gz
 - root /opt
-  
+- 正常使用
+- gcc make
+- 检查yum是否正常
+- yum clean all
+- yum repolist
+- 检查是否执行成功
+- ls /usr/local/nginx/
+- conf html logs sbin 成功
+- nginx 不支持 systemctrl start nginx 启动
+- /usr/local/nginx/sbin/nginx 存放目录
+- 关闭httpd  systemctl stop httpd
+- 关闭防火墙  systemctl stop firewalld
+- 通过ip访问，就可以看到nginx的首页
+- 关闭 nginx /usr/local/nginx/sbin/nginx -s stop
+- netstat -ntulp | grep nginx
+- n 以数字显示端口号
+- t 显示tcp类型数据
+- u 显示udp类型数据
+- l 监听的端口信息
+- p 显示服务的名称  
+- echo -e "\033[31mABCD\033[0m"  改变输出的颜色
+- \033[ 改颜色
+- 31m 红色
+- 32m 绿色
+- \033[0m 改完要还原 0m 默认颜色
+
+# 函数
