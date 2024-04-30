@@ -10,9 +10,9 @@
 read -p "请输入用户名:" u
 useradd $u # 用户名
 stty -echo # 屏蔽回显
-read -p "请输入密码:" n
+read -p "请输入密码(默认123456):" n
 stty echo # 恢复回显
-echo $n | passwd --stdin $u # 密码
+echo ${n:-123456} | passwd --stdin $u # 密码
 
 
 

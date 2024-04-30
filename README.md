@@ -163,12 +163,56 @@ shell study demo
 
 - 删除
 - 要么删除头，要么删除尾，不能删除中间
-- ${变量名#要删除的内容} 掐头
-- ${变量名%要删除的内容} 去尾
+- ${变量名#要删除的内容} 掐头 匹配最短
+- ${变量名##*要删除的内容} 匹配最长 * 代表任意字符
+- ${变量名%要删除的内容} 去尾 匹配最短
+- ${变量名%%*要删除的内容} 去尾 匹配最长
+
+- 定义初值
+- ${变量名:-初值}
+- 确保变量不为空
+- a=abc
+- echo ${a:-123}
 
 # 创建10个文件
 - touch abc{01..10}.txt
 - rm -r abc{01..10}.txt
 - mv abc.01.txt abc01.doc
-- 
+
+# 正则表达式
+- 使用若干符合配合某工具对字符串进行增删改查操作
+- head -5 /etc/passwd > user
+- 显示文件前5行的内容
+- grep 可以支持正则表达式的工具
+- ^ 匹配开头 $匹配结尾
+- grep root user  在user文件中搜索含有root的行
+- grep ^root user root开头的
+- grep bash$ user root结尾的
+- grep ^$ user 匹配空行
+- grep -v ^$ 匹配有内容的行  -v 表示取反
+- [] 任意单个字符
+- grep "[root]" user  匹配包含 r o t 字符的行
+- grep "roo[ty]" user  匹配 root 或者rooy
+- grep "[a-z]" user 匹配小写字母
+- grep "[A-Z]" user 匹配大写字母
+- grep "[a-Z]" user 找所有字母
+- grep "[0-9]"" user 找所有的数字
+- "[^]" 取反
+- grep "[^rot]" user 找除了rot以外的内容
+- grep "[^0-9]" user 找非数字的内容
+- grep "[^0-9a-Z]" 找所有的符号
+- 加上引号防止正则失灵
+- grep "." 匹配任意单个字符
+- grep "r..t" user 
+- * 匹配前一个字符任意次数，不能单独使用
+- grep "a*" user 查找含有a的行 大于等于0次的 
+- grep "roota*" user  搜索 root roota rootaa rootaaa...
+- grep ".*" user  搜索任意内容出现任意次 通配符  啥都能匹配
+- grep "." 空行匹配不到，.只能匹配有内容的  匹配有字符的行
+- grep "ro\{1,2\}t" user  o出现1-2次
+- grep "ro\{2\}t" user  o出现2次
+- grep "ro\{2,\}t" user  o出现2次以及2次以上
+- \(\) 保留，组合为整体
+- grep "0:\{2\}" user 匹配 0::
+- grep "\(0:\)\{2\}" user 0: 组合成一个整体 匹配 0:0:
   

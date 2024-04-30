@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # 先定义，后调用
-a(){
+function a {
+# a(){
     # 会多显示个-e 不知道为啥
     # echo -e "\033[31mABCD\033[0m"
 
